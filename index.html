@@ -1,95 +1,126 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Phishing Template</title>
+    <title>Login</title>
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
+        /* Styling for the form container */
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        /* Avatar image styling */
+        .imgcontainer {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        img.avatar {
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        /* Container styling */
         .container {
-            max-width: 600px;
-            background-color: #ffffff;
-            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .container label {
+            font-weight: bold;
+        }
+
+        .container input[type="text"], .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin: auto;
+            box-sizing: border-box;
         }
 
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-
-        p {
-            color: #555;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        .button-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .button {
+        .container button {
             background-color: #4CAF50;
             color: white;
-            padding: 15px 20px;
-            text-decoration: none;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
             border-radius: 5px;
-            font-size: 16px;
-            display: inline-block;
+            width: 100%;
         }
 
-        .button:hover {
+        .container button:hover {
             background-color: #45a049;
         }
 
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-            margin-top: 20px;
+        .container input[type="checkbox"] {
+            margin-left: 5px;
         }
 
-        .footer a {
-            color: #888;
-            text-decoration: none;
+        .container .cancelbtn {
+            background-color: #f44336;
+            margin-top: 10px;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        /* Footer container styling */
+        .container span.psw {
+            float: right;
+            padding-top: 10px;
+        }
+
+        .container a {
+            color: #4CAF50;
+        }
+
+        /* Styling for the footer container */
+        .container[style="background-color:#f1f1f1"] {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
 
+<form action="" method="post">
+    <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Avatar" class="avatar"/>
+    </div>
+
     <div class="container">
-        <h2>Important Security Update</h2>
-        <p>Dear User,</p>
-        <p>We have detected some unusual activity in your account and require you to verify your account immediately to ensure your account's security. Please click the button below to verify your account and update your details.</p>
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
 
-        <div class="button-container">
-            <a href="{{.URL}}" class="button">Verify Your Account</a>
-        </div>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
 
-        <p>If you do not verify your account within 24 hours, it will be temporarily suspended.</p>
-
-        <p>Thank you for your prompt attention to this matter.</p>
-
-        <p>Best regards,<br>The Security Team</p>
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
     </div>
 
-    <div class="footer">
-        <p>This is an automated email. Please do not reply.</p>
-        <p>If you believe this message was sent to you in error, please <a href="#">contact us</a>.</p>
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
     </div>
+</form>
 
 </body>
 </html>
